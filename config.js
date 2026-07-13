@@ -15,6 +15,8 @@
  *      o placeholder em assets/logo.svg enquanto não houver arte final).
  *   4. Atualize "address", "mapUrl", "phone" e "hours" com os dados reais.
  *   5. Reescreva a lista "services" com os serviços, preços e durações reais.
+ *      Troque também o campo "imagem" de cada serviço pela foto real
+ *      correspondente (mesma proporção 4:3 recomendada para manter o padrão).
  *   6. Reescreva a lista "barbers" com a equipe real (nome e especialidade;
  *      a foto é gerada automaticamente a partir das iniciais, sem precisar
  *      de arquivos de imagem).
@@ -62,6 +64,10 @@ const CONFIG = {
     { day: "Domingo", open: null, close: null },
   ],
 
+  // As URLs de "imagem" abaixo são fotos de banco gratuito (Unsplash) usadas
+  // apenas para este demo. Para um cliente real, basta substituir cada URL
+  // pelo caminho de uma foto real da barbearia dele (ex.: "assets/servicos/corte.jpg").
+  // Nenhum outro arquivo precisa ser tocado para essa troca.
   services: [
     {
       id: "corte-classico",
@@ -70,6 +76,7 @@ const CONFIG = {
       duration: 40,
       price: 65,
       icon: "scissors",
+      imagem: "https://images.unsplash.com/photo-1553521041-d168abd31de3?auto=format&fit=crop&w=800&h=600&q=80",
     },
     {
       id: "barba",
@@ -78,6 +85,7 @@ const CONFIG = {
       duration: 30,
       price: 50,
       icon: "razor",
+      imagem: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&h=600&q=80",
     },
     {
       id: "corte-barba",
@@ -86,6 +94,7 @@ const CONFIG = {
       duration: 65,
       price: 105,
       icon: "combo",
+      imagem: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&h=600&q=80",
     },
     {
       id: "sobrancelha",
@@ -94,6 +103,7 @@ const CONFIG = {
       duration: 15,
       price: 25,
       icon: "brow",
+      imagem: "https://images.unsplash.com/photo-1564278692313-b2d65996fc93?auto=format&fit=crop&w=800&h=600&q=80",
     },
     {
       id: "platinado",
@@ -102,6 +112,7 @@ const CONFIG = {
       duration: 100,
       price: 180,
       icon: "spark",
+      imagem: "https://images.unsplash.com/photo-1660144689256-c9a4a4ac116c?auto=format&fit=crop&w=800&h=600&q=80",
     },
   ],
 

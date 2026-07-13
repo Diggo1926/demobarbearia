@@ -21,16 +21,32 @@ function renderServices() {
     .map(
       (s) => `
     <article class="service-card" data-service-id="${s.id}">
-      <span class="service-card__icon">${ICONS[s.icon] || ICONS.scissors}</span>
-      <h3 class="service-card__name">${s.name}</h3>
-      <p class="service-card__desc">${s.description}</p>
-      <div class="service-card__meta">
-        <span class="service-card__duration">${ICONS.clock}${formatDuration(s.duration)}</span>
-        <span class="service-card__price">${formatBRL(s.price)}</span>
+      <div class="service-card__media" data-state="loading">
+        <img class="service-card__image" src="${s.imagem}" alt="${s.name}" loading="lazy" />
+        <span class="service-card__media-overlay"></span>
+        <span class="service-card__media-fallback">${s.name}</span>
+      </div>
+      <div class="service-card__body">
+        <h3 class="service-card__name">${s.name}</h3>
+        <p class="service-card__desc">${s.description}</p>
+        <div class="service-card__meta">
+          <span class="service-card__duration">${ICONS.clock}${formatDuration(s.duration)}</span>
+          <span class="service-card__price">${formatBRL(s.price)}</span>
+        </div>
       </div>
     </article>`
     )
     .join("");
+
+  grid.querySelectorAll(".service-card__media").forEach((media) => {
+    const img = media.querySelector("img");
+    if (img.complete) {
+      media.dataset.state = img.naturalWidth > 0 ? "loaded" : "error";
+      return;
+    }
+    img.addEventListener("load", () => (media.dataset.state = "loaded"), { once: true });
+    img.addEventListener("error", () => (media.dataset.state = "error"), { once: true });
+  });
 }
 
 function renderTeam() {
