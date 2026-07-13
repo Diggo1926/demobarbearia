@@ -1,0 +1,53 @@
+/* Wrapper das etapas do agendamento */
+
+.step {
+  animation: step-in var(--dur-slow) var(--ease);
+}
+
+.step__title {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+}
+
+.step__title:focus {
+  outline: none;
+}
+
+.step__hint {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-5);
+}
+
+.step--success {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step--success .step__hint {
+  max-width: 40ch;
+}
+
+.step--success .summary {
+  width: 100%;
+}
+
+.booking-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.booking-nav .btn {
+  flex: 1;
+}
+
+@media (min-width: 480px) {
+  .booking-nav .btn {
+    flex: initial;
+    min-width: 140px;
+  }
+}

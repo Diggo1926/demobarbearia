@@ -1,0 +1,19 @@
+{
+  "name": "Barbearia Aurora — Agendamento",
+  "short_name": "Aurora",
+  "description": "Agende seu horário na Barbearia Aurora em poucos passos.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#1c1917",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

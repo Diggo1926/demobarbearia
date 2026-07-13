@@ -1,0 +1,62 @@
+/**
+ * Design tokens — única fonte de verdade para espaçamento, cor, tipografia,
+ * raio e sombra. Nada no restante do CSS deve usar valores soltos.
+ * As cores aqui são o fallback; js/theme.js sobrescreve a partir de config.js.
+ */
+
+:root {
+  /* Escala de espaçamento (múltiplos de 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Raio único do sistema */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  /* Cores (fallback — sobrescrito em runtime por theme.js) */
+  --color-primary: #1c1917;
+  --color-primary-light: #3a3532;
+  --color-secondary: #b08a4c;
+  --color-accent: #d4a44c;
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-text: #211d1a;
+  --color-text-muted: #6f6660;
+  --color-border: #e8e1d7;
+  --color-success: #3f7d5c;
+  --color-error: #b3432b;
+
+  /* Tipografia */
+  --font-base: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+
+  /* Sombra — usada com extrema moderação */
+  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.06);
+  --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.1);
+  --shadow-lg: 0 20px 48px rgba(28, 25, 23, 0.16);
+
+  /* Transições */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 240ms;
+  --dur-slow: 400ms;
+
+  --container-max: 1100px;
+}
